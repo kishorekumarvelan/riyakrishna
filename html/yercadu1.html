@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hotel and Bike Rental Calculator</title>
+</head>
+<body>  
+
+    <form action="">
+
+
+    <h1>Hotel and Bike Rental Calculator</h1>
+    <!--<label for="days">Number of Days Stay:</label>-->
+    <input type="number" id="days" min="1" placeholder="Enter number of days"><br><br>
+
+    <!--<label for="bike">Select Bike:</label>-->
+    <select id="bike">
+        <option value="bike1">Royal Enfield 350</option>
+        <option value="bike2">KTM 390</option>
+        <option value="bike3">BMW G 310R</option>
+        <option value="bike4">Kawasaki Ninja H2</option>
+    </select><br><br>
+
+    <!--<label for="Hotel">Select the Hotel</label>-->
+    <select id="Hotel">
+        <option value="Hotel1">Great trail Yercadu by GRT hotel (₹16,700/per)</option>
+        <option value="Hotel2">the story resurt and spa (₹10,115/per)</option>
+        <option value="Hotel3">Grange Resort (₹5,225/per)</option>
+        <option value="Hotel4">hotel sevaroys(₹2,900/per )</option>
+    </select><br><br>
+
+    <button onclick="calculateTotal()">Calculate Total</button>
+
+    
+
+    <p id="Cost_Bike"></p>
+    <p id="Cost_Hotel"></p>
+
+    <p id="total"></p>
+
+    <script>
+        function calculateTotal() {
+            // Get the number of days from the input
+            var days = parseInt(document.getElementById("days").value);
+
+            // Get the selected bike's value
+            var selectedBike = document.getElementById("bike").value;
+
+            // Define the Fuel Cost
+         var bike_Fuel_Prices = {
+                "bike1": 40,
+                "bike2": 46,
+                "bike3": 28,
+                "bike4": 15
+            };
+
+            // Get the selected Hotel
+
+            var selectedHotel = document.getElementById("Hotel").value;
+
+            //Define the Hotel_Rent
+
+            var Hotel_Rent = {
+
+                "Hotel1": 16700,
+                "Hotel2": 10115,
+                "Hotel3": 5225,
+                "Hotel4": 2900
+                
+            };
+
+            // Calculate the bike rental cost based on the selected bike
+            var bikeCost = (44/bike_Fuel_Prices[selectedBike])*120;
+
+            // Calculate the hotel rent (assuming a fixed rate of $100 per day)
+            var hotelRent = Hotel_Rent[selectedHotel] * days;
+
+            // Calculate the total amount
+            var totalAmount = bikeCost + hotelRent;
+
+            // Display the total amount
+            var totalElement = document.getElementById("total");
+            var _bikeCost = document.getElementById("Cost_Bike");
+            var _HotelCost = document.getElementById("Cost_Hotel");
+            _bikeCost.innerHTML = "Total Fuel_Cost: ₹" + bikeCost;
+            _HotelCost.innerHTML = "Total Hotel_Rent for" + days + "is: ₹" + hotelRent;
+            totalElement.innerHTML = "Total Amount: ₹" + totalAmount;
+        }
+    </script>
+    </form>
+</body>
+</html>

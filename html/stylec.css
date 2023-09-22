@@ -1,0 +1,22 @@
+:root{
+    --white:whitesmoke;
+    
+}
+
+
+body{
+    margin: 0px;
+    font-family:Arial, Helvetica, sans-serif
+}
+.landing{
+    background-image: url(emma-watson-wallpaper.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    color: whitesmoke;
+
+}
+header{
+    color:
+
+}

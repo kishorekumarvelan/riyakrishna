@@ -1,0 +1,28 @@
+h1{
+    color: red;
+}
+.bluebox{
+    background-color: rgb(10, 10, 174);
+    height: 300px;
+    width: 300px;
+    margin-top: auto;
+    position:sticky;
+    top: 0px;
+    
+    
+
+}
+.yellowbox{
+    background-color: yellow;
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    position:fixed;
+    left: 110px;
+    bottom: 450px;
+    /*float: left;*/
+    position: fixed;
+    
+
+
+}

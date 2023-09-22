@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="places.css">
+    <link rel="stylesheet" href="trip.css">
+</head>
+<body>
+        <h4>Yercadu</h4>
+
+    <article>
+
+        <div class="emm">
+        <h4>Hotel and Bike Rental Calculator</h4>
+        </div>
+        <br><br><br>
+        <!--<label for="days">Number of Days Stay:</label>-->
+        <div class="input">
+        <input type="number" name="input" id="days" min="1" placeholder="Enter number of days"><br><br>
+        </div>
+
+        <div>From</div>
+
+        <select id="Distic">
+            <option value="Distic1">Ariyalur,tamilnadu</option>
+            <option value="Distic2">Chengalpattu,tamilnadu</option>
+            <option value="Distic3">Chennai,tamil</option>
+            <option value="Distic4">Coimbatore,tamilnadu</option>
+            <option value="Distic5">Cuddalore,tamilnadu</option>
+            <option value="Distic6">Dharmapuri,tamilnadu</option>
+            <option value="Distic7">Dindigul,tamilnadu</option>
+            <option value="Distic8">Erode,tamilnadu</option>
+            <option value="Distic9">Kallakurichi,tamilnadu</option>
+            <option value="Distic10">Kancheepuram,tamilnadu</option>
+            <option value="Distic11">Karur,tamilnadu</option>
+            <option value="Distic12">Krishnagiri,tamilnadu</option>
+            <option value="Distic13">Madurai,tamilnadu</option>
+            <option value="Distic14">Mayiladuthurai,tamilnadu</option>
+            <option value="Distic15">Nagapattinam,tamilnadu</option>
+            <option value="Distic16">Kanniyakumari,tamilnadu</option>
+            <option value="Distic17">Namakkal,tamilnadu</option>
+            <option value="Distic18">Perambalur,tamilnadu</option>
+            <option value="Distic19">Pudukottai,tamilnadu</option>
+            <option value="Distic20">Ramanathapuram,tamilnadu</option>
+            <option value="Distic21">ranipet,tamilnadu</option>
+            <option value="Distic22">salem,tamilnadu</option>
+            <option value="Distic23">sivagangai,tamilnadu</option>
+            <option value="Distic24">tenkasi,tamilnadu</option>
+            <option value="Distic25">thanjavur,tamilnadu</option>
+            <option value="Distic26">theni,tamilnadu</option>
+            <option value="Distic27">thiruvallur,tamilnadu</option>
+            <option value="Distic28">thiruvarur,tamilnadu</option>
+            <option value="Distic29">thoothukudi,tamilnadu</option>
+            <option value="Distic30">trichirappalli,tamilnadu</option>
+            <option value="Distic31">thirunelveli,tamilnadu</option>
+            <option value="Distic32">thirupathur,tamilnadu</option>
+            <option value="Distic33">tiruppur,tamilnadu</option>
+            <option value="Distic34">tiruvannamalai,tamilnadu</option>
+            <option value="Distic35">nilgiri,tamilnadu</option>
+            <option value="Distic36">vellor,tamilnadu</option>
+            <option value="Distic37">vilupuram,tamilnadu</option>
+            <option value="Distic38">virudhunagar</option>
+        </select>
+        <!--<label for="bike">Select Bike:</label>-->
+        <select id="bike">
+            <option value="bike1">Royal Enfield 350</option>
+            <option value="bike2">KTM 390</option>
+            <option value="bike3">BMW G 310R</option>
+            <option value="bike4">Kawasaki Ninja H2</option>
+        </select><br><br>
+    
+        <!--<label for="Hotel">Select the Hotel</label>-->
+        <select id="Hotel">
+            <option value="Hotel1">Great trail Yercadu by GRT hotel (₹16,700/per)</option>
+            <option value="Hotel2">the story resurt and spa (₹10,115/per)</option>
+            <option value="Hotel3">Grange Resort (₹5,225/per)</option>
+            <option value="Hotel4">hotel sevaroys(₹2,900/per )</option>
+        </select><br><br>
+    
+        <button class="btn" onclick="calculateTotal()">Calculate Total</button>
+
+        <br>
+        <br>
+    
+        <div class="ko">
+    
+        <p id="Cost_Bike"></p>
+        <p id="Cost_Hotel"></p>
+    
+        <p id="total"></p>
+
+
+        </div>
+    
+        <script>
+            function calculateTotal() {
+                // Get the number of days from the input
+                var days = parseInt(document.getElementById("days").value);
+    
+                // Get the selected bike's value
+                var selectedBike = document.getElementById("bike").value;
+    
+                // Define the Fuel Cost
+             var bike_Fuel_Prices = {
+                    "bike1": 40,
+                    "bike2": 46,
+                    "bike3": 28,
+                    "bike4": 15
+                };
+    
+                // Get the selected Hotel
+    
+                var selectedHotel = document.getElementById("Hotel").value;
+    
+                //Define the Hotel_Rent
+    
+                var Hotel_Rent = {
+    
+                    "Hotel1": 16700,
+                    "Hotel2": 10115,
+                    "Hotel3": 5225,
+                    "Hotel4": 2900
+                    
+                };
+
+                //Distance From
+
+                var selectedDistic = document.getElementById("Distic").value;
+
+                
+                var KM = { 
+                    "Distic1":171,
+                    "Distic2":305,
+                    "Distic3":366,
+"Distic4":195,
+"Distic5":221,
+"Distic6":92,
+"Distic7":198,
+"Distic8":97,
+"Distic9":123,
+"Distic10":275,
+"Distic11":124,
+"Distic12":142,
+"Distic13":262,
+"Distic14":231,
+"Distic15":286,
+"Distic16":490,
+"Distic17":80,
+"Distic18":138,
+"Distic19":218,
+"Distic20":376,
+"Distic21":232,
+"Distic22":30,
+"Distic23":299,
+"Distic24":409,
+"Distic25":279,
+"Distic26":271,
+"Distic27":321,
+"Distic28":263,
+"Distic29":407,
+"Distic30":168,
+"Distic31":407,
+"Distic32":118,
+"Distic33":149,
+"Distic34":153,
+"Distic35":260,
+"Distic36":208,
+"Distic37":198,
+"Distic38":304
+
+
+   //Distance whant to be  added
+
+
+                }
+    
+                // Calculate the bike rental cost based on the selected bike
+                var bikeCost = Math.round((KM[selectedDistic]/bike_Fuel_Prices[selectedBike])*120);
+    
+                // Calculate the hotel rent (assuming a fixed rate of $100 per day)
+
+                var hotelRent = Math.round(Hotel_Rent[selectedHotel] * days);
+    
+                // Calculate the total amount
+                var totalAmount = Math.round(bikeCost + hotelRent)
+    
+                // Display the total amount
+                var totalElement = document.getElementById("total");
+                var _bikeCost = document.getElementById("Cost_Bike");
+                var _HotelCost = document.getElementById("Cost_Hotel");
+                _bikeCost.innerHTML = "Total Fuel_Cost: ₹" + bikeCost;
+                _HotelCost.innerHTML = "Total Hotel_Rent for" + days + "is: ₹" + hotelRent;
+                totalElement.innerHTML = "Total Amount: ₹" + totalAmount;
+            }
+        </script>
+        </article>
+       
+           
+</body>
+</html>
